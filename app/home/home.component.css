@@ -1,0 +1,131 @@
+
+
+  
+   /* Hero section */
+  
+  
+   #hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  #hero p {
+    font-size: 18px;
+    color: #fb0202;
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #666;
+  }
+   
+  .content a {
+    font-size: 15px;
+    background-color: white;
+    color: rgb(23, 237, 91);
+    padding: 10px 20px;
+    border-radius: 5px;
+    
+  }
+
+  .content a:hover{
+    color: white;
+    background-color: rgb(24, 227, 24);
+  }
+
+  /* order step */
+
+  .step {
+    text-align: center;
+  }
+  
+  
+  .step1 {
+    display: inline-block;
+    text-align: center;
+    margin-left: 70px;
+    background-color: black;
+    padding: 6px 50px;
+    border-radius: 5px;
+    color: rgb(27, 205, 27);
+  }
+  
+  .step2 {
+    display: inline-block;
+    text-align: center;
+    margin-right: 95px; 
+    margin-left: 100px;
+    background-color: black;
+    padding: 6px 80px;
+    border-radius: 5px;
+    color: rgb(27, 205, 27);
+  }
+  
+  .step3 {
+    display: inline-block;
+    text-align: center;
+    margin-right: 60px; 
+    margin-left: 10px;
+    background-color: black;
+    padding: 6px 50px;
+    border-radius: 5px;
+    color: rgb(27, 205, 27);
+  }
+    
+
+  
+  
+  
+  .row img {
+    width: 200px;
+    height: 200px; 
+  }
+
+  .bagbox {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-left: 50px;
+  }
+
+  .item{
+    margin-right: 50px;
+  }
+  
+
+  .viewmorebtn {
+    text-align: left;
+    margin-left: 130px;
+    font-size: 18px;
+   
+  }
+
+  .buybtn {
+    background-color: #c14646;
+    color: white;
+    border: 2px solid #f1f1f1;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-left: 10px;
+  }
+  
+  .buybtn:hover {
+    background-color: black;
+    color: white;
+  }
+ 

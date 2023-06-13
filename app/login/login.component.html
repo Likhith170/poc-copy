@@ -1,0 +1,25 @@
+<style>
+  .background-container {
+    background-image: url('../../assets/text2photo-24773688b18b29826c7fde2339eaa014.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 100vh; 
+  }
+</style>
+<div class="background-container">
+<br><br><div class="login-container">
+  <h2 style="text-align: center;margin-top: 10px;">Login</h2><br>
+  <form (ngSubmit)="login()">
+    <div>
+      <label for="username">Username: </label>
+      <input type="text" id="username" name="username" [(ngModel)]="username">
+    </div>
+    <div>
+      <label for="password">Password: </label>
+      <input type="password" id="password" name="password" [(ngModel)]="password">
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div></div>
+<br>

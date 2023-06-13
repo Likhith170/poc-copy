@@ -1,0 +1,70 @@
+<div class="container mt-5 mb-5">
+    <div class="cartrow">
+      <div *ngIf="cartItems.length > 0">
+        <h1>Cart Items</h1>
+        <div *ngFor="let item of cartItems">
+          <!--<p>{{ item.name }}</p>
+          <p>{{ item.price | currency:'INR' }}</p>-->
+        </div>
+      </div>
+  
+      <ng-container *ngIf="cartItems.length > 0; else emptyCart">
+        <div class="container">
+          <div class="cart-table">
+            <div class="cart-product">
+              <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th>Sr.No</th>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+  
+                <tbody>
+                  <tr *ngFor="let item of cartItems; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ item.name }}</td>
+                    <td><img style="height: 100px; width: 100px;" [src]="item.image" alt="Product Image"></td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ item.price | currency:'INR' }}</td>
+                    <td>
+                      <button class="quantity-btn" (click)="decreaseQuantity(item)">-</button>
+                      {{ item.quantity }}
+                      <button class="quantity-btn" (click)="increaseQuantity(item)">+</button>
+                    </td>
+                    <td>{{ item.total | currency:'INR' }}</td>
+                    <td><button class="btn btn-danger" (click)="removeFromCart(i)"><i class="fas fa-trash-alt"></i></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+  
+      <ng-template #emptyCart>
+        <div class="cartcontainer">
+          <div class="card">
+            <h3 class="cart-title">My Cart</h3>
+          </div>
+          <div class="cartcenter">
+            <img src="" alt="">
+            <h3>Your cart is empty!</h3>
+            <h4>Add items to your cart</h4>
+          </div>
+        </div>
+      </ng-template><br>
+
+      <p  class="totalamount">Total Amount: {{ totalPrice | currency:'INR' }}</p><br>
+      <div class="text-center">
+        <button class="btn btn-primary center-button" (click)="goToPaymentPage()">Proceed to Payment</button>
+      </div><br><br>
+  
+      
+  

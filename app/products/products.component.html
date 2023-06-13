@@ -1,0 +1,70 @@
+<div ><br>
+  <h1 class="text-center">Our <span style="color: palevioletred;">Collections </span><i class='fas fa-heart' style="color:palevioletred;"></i></h1><br>
+  <div class="bagbox" >
+      <div *ngFor="let bg of bagData;index as i" class="item">
+          <div class="row" >
+              <img height="210px" width="200px" src="{{bg.bagImg}}" />
+              <h2 style="text-align: center; font-size: 18px;">{{bg.bagName}}</h2>
+              <p style="text-align: center;">{{bg.bagPrice | currency:'INR'}}</p><br>
+              <!--<button class="buybtn"  (click)=addtoCart(bg)>Buy Now</button>-->
+              <a class="buybtn" (click)="addedToCart[bg.id] ? removeFromCart(bg) : addToCart(bg)">
+                {{ addedToCart[bg.id] ? 'Added to Cart' : 'Add to Cart' }}
+              </a>
+          </div>
+      </div>
+  </div>
+
+  <div >
+    <br>
+    <div class="bagbox" >
+        <div *ngFor="let bg of bagData1;index as i" class="item">
+            <div class="row" >
+                <img height="200px" width="200px" src="{{bg.bagImg}}" />
+                <h2 style="text-align: center; font-size: 18px;">{{bg.bagName}}</h2>
+                <p style="text-align: center;">{{bg.bagPrice | currency:'INR'}}</p><br>
+                <!--<a class="buybtn" (click)="addtoCart(bg)">Buy Now</a>-->
+                <a class="buybtn" (click)="addedToCart[bg.id] ? removeFromCart(bg) : addToCart(bg)">
+                    {{ addedToCart[bg.id] ? 'Added to Cart' : 'Add to Cart' }}
+                  </a>
+
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <div class="heading-container" id = "heading-container">
+    <h2 class="gucci" >Brand Collections</h2>
+    </div><br><br>
+
+    <h2 style="font-weight: bold;margin-left: 140px; background-color: gold; color: black; padding: 10px; display: inline-block;">CHRISTIAN DIOR</h2>
+    <br><br><div class="bagbox" >
+        <div *ngFor="let bg of bagData2;index as i" class="item">
+            <div class="row" >
+                <img height="200px" width="210px" src="{{bg.bagImg}}" />
+                <h2 style="text-align: center; font-size: 18px;">{{bg.bagName}}</h2>
+                <p style="text-align: center;">{{bg.bagPrice | currency:'INR'}}</p><br>
+                <!--<a class="buybtn" (click)="addtoCart(bg)">Buy Now</a>-->
+                <a class="buybtn" (click)="addedToCart[bg.id] ? removeFromCart(bg) : addToCart(bg)">
+                    {{ addedToCart[bg.id] ? 'Added to Cart' : 'Add to Cart' }}
+                  </a>
+
+            </div>
+        </div>
+    </div><br><br><br>
+
+    <h2  style="font-weight: bold;margin-left: 140px; background-color: gold; color: black; padding: 10px; display: inline-block;">GUCCI</h2><br> <br>
+    <div class="bagbox" >
+        <div *ngFor="let bg of bagData3;index as i" class="item">
+            <div class="row" >
+                <img height="200px" width="210px" src="{{bg.bagImg}}" />
+                <h2 style="text-align: center; font-size: 18px;">{{bg.bagName}}</h2>
+                <p style="text-align: center;">{{bg.bagPrice | currency:'INR'}}</p><br>
+                <!--<a class="buybtn" (click)="addtoCart(bg)">Buy Now</a>-->
+                <a class="buybtn" (click)="addedToCart[bg.id] ? removeFromCart(bg) : addToCart(bg)">
+                    {{ addedToCart[bg.id] ? 'Added to Cart' : 'Add to Cart' }}
+                  </a>
+                </div>
+        </div>
+        <br><br><br>
+
+        

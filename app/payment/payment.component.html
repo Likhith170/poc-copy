@@ -1,0 +1,72 @@
+<div class="userdetails">
+  <h1 *ngIf="!orderPlaced" style="text-align: center;">Enter Your Details</h1>
+  <br>
+  <form *ngIf="!orderPlaced" (ngSubmit)="proceedToPayment(paymentForm)" #paymentForm="ngForm" novalidate>
+    <input type="text" class="form-control" placeholder="Enter Your Full Name" name="fullName" [(ngModel)]="fullName" required />
+
+    <input type="text" class="form-control" placeholder="Enter Your Mobile" name="mobile" [(ngModel)]="mobile" required />
+
+    <label for="country" style="font-weight: bold;">Country:</label>
+    <select name="country" class="form-control" [(ngModel)]="country" required>
+      <option value="">Select Country</option>
+      <option value="India">India</option>
+      <option value="Australia">Australia</option>
+      <option value="USA">USA</option>
+    </select><br>
+
+    <textarea class="form-control" placeholder="Enter Your Address" name="address" [(ngModel)]="address" required></textarea>
+
+    <div style="text-align: center; margin-left: -150px;">
+      <input type="radio" id="cash" name="paymentMethod" value="cash" [(ngModel)]="paymentMethod" required>
+      <label for="cash" style="text-align: center; font-weight: bold; margin-left: -140px;">Cash on Delivery</label>
+    </div>
+
+    <button class="btn btn-md btn-dark mt-3" type="submit">Order</button><br>
+     
+    <div style="text-align: center; margin-top: 10px; color: rgb(15, 181, 15); font-weight: bold;">
+      Total Amount: {{ totalPrice | currency:'INR' }}
+    </div>
+
+    <div *ngIf="paymentForm.invalid && (paymentForm.dirty || paymentForm.submitted)" style="color: red; margin-top: 10px; font-weight: bold;">
+      Please fill in all required fields.
+    </div><br>
+  </form>
+
+  <div *ngIf="orderPlaced" style="text-align: center; margin-top: 10px; color: green; font-weight: bold;">
+    Order has been placed successfully <i class="fas fa-check-circle"></i>
+  </div><br>
+
+  <div *ngIf="orderPlaced" style="text-align: center;">
+    <h3>Order Details</h3>
+    <table style="margin: 0 auto;">
+      <tr>
+        <td><strong>Full Name:</strong></td>
+        <td>{{ fullName }}</td>
+      </tr>
+      <tr>
+        <td><strong>Mobile:</strong></td>
+        <td>{{ mobile }}</td>
+      </tr>
+      <tr>
+        <td><strong>Country:</strong></td>
+        <td>{{ country }}</td>
+      </tr>
+      <tr>
+        <td><strong>Address:</strong></td>
+        <td>{{ address }}</td>
+      </tr>
+      <tr>
+        <td><strong>Payment Method:</strong></td>
+        <td>{{ paymentMethod }}</td>
+      </tr>
+      <tr>
+        <td><strong>Total Amount:</strong></td>
+        <td>{{ totalPrice | currency:'INR' }}</td>
+      </tr>
+    </table>
+    <br><br><br><br><br>
+  </div>
+  
+
+
+

@@ -1,0 +1,26 @@
+/* Features section */
+#features {
+    background-color: #f2f2f2;
+    padding: 100px 300px;
+    text-align: center;
+  }
+  
+  #features h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  #features h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  #features ul {
+    list-style: none;
+  }
+  
+  #features li {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+  }

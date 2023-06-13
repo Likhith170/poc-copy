@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Landing Page</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body >
+  <header *ngIf="!isLoginPage()">
+  <nav  >
+    <p class="shoppingname" >Shopping Zone <i class="fas fa-shopping-bag" style="color: white;"></i>
+    </p>
+    <ul   style="list-style: none; padding: 0;">
+      <li class="buttons"><a  routerLink="/home" href="#home" style="color: white;">Home <i class='fas fa-home'></i></a></li>&nbsp;&nbsp;
+      <li class="buttons" style="cursor: pointer;">
+        <a style="color: white;" (click)="toggleDropdown()" routerLink="/products">Handbags <i class="fa fa-shopping-bag"></i></a>
+        <div *ngIf="showDropdown" class="dropdown">
+          <select class="select-options" #selectOptions (change)="onOptionSelected(selectOptions.value)">
+            <option style="font-weight: bold;" value="option1">Classic</option>
+            <option style="font-weight: bold;" value="option2">Brand</option>
+          </select>                 
+        </div>
+      </li>&nbsp;&nbsp;
+      <li class="buttons"><a routerLink="/about" href="#about" style="color: white;">About <i class="fas fa-info-circle"></i> </a></li>&nbsp;&nbsp;
+      <li  class="buttons"><a routerLink="/features" href="#features" style="color: white;">Features <i class="fas fa-star"></i> </a></li>&nbsp;&nbsp;
+      <li class="buttons"><a routerLink="/contact" href="#contact" style="color: white;">Contact <i class="fas fa-envelope"></i></a></li>&nbsp;&nbsp;
+      <li  class="buttonscart"><a routerLink="/cart" style="color: white;">Cart <i class="fas fa-shopping-cart"></i> <span class="item-count" *ngIf="(cartItemCount$ | async) > 0">{{ cartItemCount$ | async }}</span></a></li>
+    </ul>
+  </nav>
+</header>
+</body>
+
+<router-outlet></router-outlet>
+<footer *ngIf="!isLoginPage()">
+  <p class="footer-text">
+    <span class="centered-text">&copy; 2023 Your Company. All rights reserved.</span>
+    <span class="social-icons">
+      <i class='fab fa-facebook'></i>
+      <i class='fab fa-instagram'></i>
+      <i class='fab fa-whatsapp'></i>
+      <i class='fab fa-youtube'></i>
+    </span>
+  </p>
+</footer>
+
+  
+ 
+

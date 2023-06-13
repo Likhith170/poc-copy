@@ -1,0 +1,56 @@
+<section id="hero" style="text-align: center; padding: 30px;">
+    <h1><a><i class="fas fa-shopping-bag"></i> Hand bags</a></h1>
+    <p style="font-weight: bold;">Discover amazing styles and fashion</p>
+
+  </section>
+
+  <section id="sales-banner" >
+    <img style="width:50%;" src="../../assets/banner6.jpeg" alt="Sales Banner">
+    <img style="width: 50% ; height: 315px;" src="../../assets/banner4.jpeg" alt="Sales Banner">
+  </section>
+  
+<section class="content">
+  <img  style="width: 1263px; background-size: cover; margin-bottom: -4px; margin-top: -5px;" src="../../assets/background3.jpeg" alt="style">
+  <h1 style="position:absolute; top: 100%; left: 2%; color: white; font-size: 50px; font-weight: bold;">Style your bags the way you like..</h1>
+  <a style="position:absolute; top: 110%; left: 2%;" routerLink="/products">ORDER NOW <i class='fas fa-arrow-right'></i></a>
+</section>
+<br>
+<div class="step">
+  <h1 style="text-align: centers;">how can <span style="color:  rgb(27, 205, 27); font-weight: bold; text-decoration: underline;">you order</span></h1><br>
+  <div class="row">
+  <div class="step1">
+    <h2>1</h2><br>
+    <p style="color: white;">select and add to cart</p>
+  </div>
+<div class="step2">
+  <h2>2</h2><br>
+  <p style="color: white;">fill the details</p>
+</div>
+<div class="step3" style="margin-left: 1px;">
+  <h2>3</h2><br>
+  <p style="color: white;">your order is placed</p>
+</div>
+  </div>
+  <br>
+  <hr style="border-color: green;">
+
+  <div >
+    <h1 class="text-center">Customers <span style="color: palevioletred;">Favourites </span><i class='fas fa-heart' style="color:palevioletred;"></i></h1><br>
+    <div class="bagbox" >
+        <div *ngFor="let bg of bagData;index as i" class="item">
+            <div class="row">
+                <img  src="{{bg.bagImg}}" />
+                <h2 style="text-align: center; font-size: 18px;">{{bg.bagName}}</h2><br>
+                <p style="text-align: center;">{{bg.bagPrice | currency:'INR'}}</p><br>
+                <a class="buybtn" (click)="addedToCart[bg.id] ? removeFromCart(bg) : addToCart(bg)">
+                  {{ addedToCart[bg.id] ? 'Added to Cart' : 'Add to Cart' }}
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <div class="viewmorebtn">
+      <a style="text-decoration: none; color: white; background-color: black;padding: 10px 10px;  border-radius: 5px;" routerLink="/products">view more</a>
+    </div>
+    <br>
